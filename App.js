@@ -38,21 +38,25 @@ class App extends Component {
   };
 
  render(){
+
   const styles = {
     normalDivStyle: {
-        height: this.state.height
-    },
-    alertDivStyle:{
-     height: 100-this.state.height
+        height: this.state.height,
+        top:100-this.state.height,
+        borderTopRightRadius:this.state.height===100 ? 30 : (this.state.height <100 && this.state.height >88) ? (this.state.height-88) :0 ,
+        borderTopLeftRadius:this.state.height===100 ? 30 :(this.state.height <100 && this.state.height >88)  ? (this.state.height-88) :0 
     }
+    
 };
-  const {normalDivStyle,alertDivStyle } = styles;
+  const {normalDivStyle} = styles;
     return (
        <div className="mainDiv">
        <Tooltip  arrow classes={this.classes} title={<TooltipContent normalValue={this.state.height} allValue={this.maxValue}></TooltipContent>} placement="top">
        <div>
-          <div className="divAlertStyle" style={alertDivStyle}></div>
+          <div className="divAlertStyle">
           <div className="divNormalStyle" style={normalDivStyle}></div>
+          </div>
+          
       </div> 
       </Tooltip>
           <div className="divSlider" >

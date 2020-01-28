@@ -1,16 +1,19 @@
-.App {
+App {
   text-align: center;
 }
 
 .divNormalStyle  {
   background:  blue;
   width: 30px;
+  position: relative;
 }
   .divAlertStyle {
    background: red;
    width: 30px;
-   border-top-left-radius: 25px;
-   border-top-right-radius: 25px;
+   border-top-left-radius: 30px;
+   border-top-right-radius: 30px;
+   position: relative;
+   height: 100px;
   }
   .divSlider{
     width: 300px;
